@@ -11,7 +11,8 @@
     "lirc_node": "0.0.4",
     "lodash": "^3.10.1",
     "morgan": "^1.6.1",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "webpack": "^3.5.5"
   },
   "devDependencies": {
     "eslint": "^1.10.0",
@@ -22,7 +23,6 @@
     "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "0.6.1",
-    "grunt-develop": "^0.4.0",
     "grunt-eslint": "17.3.1",
     "jquery": "^2.2.0",
     "jsdom": "^7.2.2",

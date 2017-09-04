@@ -3,7 +3,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-develop');
   require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
   // Project configuration.
@@ -58,15 +57,12 @@ module.exports = function (grunt) {
         tasks: ['eslint'],
       },
     },
-
-    develop: {
-      server: {
-        file: 'app.js',
-        env: { NODE_ENV: 'development' },
-      },
-    },
   });
 
+  grunt.registerTask('develop', 'Start web server', function () {
+    grunt.log.writeln('Starting web server on port 3000');
+    require('./app.js').listen(3000);
+  });
   grunt.registerTask('default', ['uglify', 'less', 'cssmin', 'eslint']);
   grunt.registerTask('server', ['uglify', 'less', 'cssmin', 'eslint', 'develop', 'watch']);
 };
